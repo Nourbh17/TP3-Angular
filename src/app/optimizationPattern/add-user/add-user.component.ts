@@ -8,13 +8,14 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output,ChangeD
 })
 export class AddUserComponent {
   @Output() add = new EventEmitter<string>();
+  
+  userFullName: string = '';
 
   // constructor(
   //   private cdr: ChangeDetectorRef) {
    
   // }
 
-  userFullName: string = '';
   addUser() {
     console.log("in add user emitter ")
     this.add.emit(this.userFullName);

@@ -11,15 +11,7 @@ import {User} from "../users.service";
 })
 export class UserListComponent {
   @Input() users: User[] = [];
-  // @Input() newUser: User|null = null;
-
   
-  // constructor(
-  //   private cdr: ChangeDetectorRef) {} 
-  //   ngOnInit(): void {
-  //     this.cdr.detectChanges();   
-  //     console.log("in user list")
-  //   }
 
   
 }

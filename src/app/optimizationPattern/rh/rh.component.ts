@@ -10,9 +10,6 @@ import * as ChartJs from 'chart.js/auto';
 export class RhComponent implements OnInit {
   oddUsers: User[];
    evenUsers: User[];
-  // oddUser: User | null = null;
-  // evenUser: User | null = null;
-  // user: User | null = null ;
   chart: any;
 
   constructor(
