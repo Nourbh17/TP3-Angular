@@ -1,18 +1,25 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output,ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddUserComponent {
   @Output() add = new EventEmitter<string>();
+
+  // constructor(
+  //   private cdr: ChangeDetectorRef) {
+   
+  // }
 
   userFullName: string = '';
   addUser() {
     console.log("in add user emitter ")
     this.add.emit(this.userFullName);
     this.userFullName = '';
+    // this.cdr.detectChanges();
+
   }
 }

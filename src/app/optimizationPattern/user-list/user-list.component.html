@@ -2,11 +2,6 @@
 
 <ol class="list-group">
   <li
-    *ngIf="newUser"
-    class="list-group-item">
-    {{newUser?.name}} : {{newUser?.age}} [{{newUser?.age |fibo}}]
-  </li>
-  <li
     *ngFor="let user of users"
     class="list-group-item">
     {{user.name}} : {{user.age}} [{{user.age |fibo}}]

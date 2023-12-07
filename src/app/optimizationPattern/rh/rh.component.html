@@ -1,4 +1,5 @@
 
+HELLO
 <div class="chart-container">
   <canvas  id="MyChart" >{{chart}}</canvas>
 </div>
@@ -6,13 +7,13 @@
 <div class="row">
   <div class="col">
     <div class="alert alert-info">List of Boss</div>
-    <app-add-user (add)="addUser(oddUsers, $event)"> </app-add-user>
-    <app-user-list  [users]="oddUsers"  [newUser]="oddUser"  ></app-user-list>
+    <app-add-user (add)="oddUsers = addUser(oddUsers, $event)"> </app-add-user>
+    <app-user-list  [users]="oddUsers"  ></app-user-list>
   </div>
   <div class="col">
     <div class="alert alert-info">List of Workers</div>
-    <app-add-user (add)="addUser(evenUsers, $event)" > </app-add-user>
-    <app-user-list   [users]="evenUsers" [newUser]="evenUser" ></app-user-list>
+    <app-add-user (add)="evenUsers = addUser(evenUsers, $event)" > </app-add-user>
+    <app-user-list   [users]="evenUsers"  ></app-user-list>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable,ChangeDetectorRef } from '@angular/core';
 import { faker } from '@faker-js/faker';
 export interface User {
   name: string,
@@ -26,15 +26,17 @@ export class UsersService {
   }
 
   addUser(list: User[], name: string) {
-    this.user=null
-    this.newUser = null
+  
+    console.log('in service add')
     this.newUser = {
       name,
       age: faker.datatype.number({min: 18, max: 30})
     }
-    list.unshift(this.newUser);
-    this.user = this.newUser
-    this.newUser = null
-    return this.user
+    //list.unshift(this.newUser);
+    return [
+      this.newUser,
+      ...list
+    ]
   }
+ 
 }

@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy,ChangeDetectorRef} from '@angular/core';
 import {User} from "../users.service";
 
 
@@ -11,6 +11,18 @@ import {User} from "../users.service";
 })
 export class UserListComponent {
   @Input() users: User[] = [];
-  @Input() newUser: User|null = null;
+  // @Input() newUser: User|null = null;
 
+  
+  // constructor(
+  //   private cdr: ChangeDetectorRef) {} 
+  //   ngOnInit(): void {
+  //     this.cdr.detectChanges();   
+  //     console.log("in user list")
+  //   }
+
+  
 }
+
+
+
