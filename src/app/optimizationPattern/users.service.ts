@@ -10,6 +10,9 @@ export interface User {
 })
 export class UsersService {
   users: User [] = [];
+  newUser:User |null = null 
+  user:User |null = null 
+
   constructor() {
     for (let i = 0; i<50; i++)
       this.users.push({
@@ -17,13 +20,21 @@ export class UsersService {
         age: faker.datatype.number({min: 18, max: 30})
       });
   }
+
   getOddOrEven(isOdd = false): User[] {
     return this.users.filter((user) => !!(user.age % 2) == isOdd );
   }
+
   addUser(list: User[], name: string) {
-    list.unshift({
+    this.user=null
+    this.newUser = null
+    this.newUser = {
       name,
       age: faker.datatype.number({min: 18, max: 30})
-    });
+    }
+    list.unshift(this.newUser);
+    this.user = this.newUser
+    this.newUser = null
+    return this.user
   }
 }
